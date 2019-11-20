@@ -1,17 +1,20 @@
 <template>
   <div class="home">
     <h1>Qualquer coisa</h1>
-    <HomeProductList />
+    <HomeProductList class="product-list" />
+    <HomePaymentSummary class="payment-summary" />
   </div>
 </template>
 
 <script>
 import HomeProductList from "./components/HomeProductList";
+import HomePaymentSummary from "./components/HomePaymentSummary";
 
 export default {
   name: "home",
   components: {
-    HomeProductList
+    HomeProductList,
+    HomePaymentSummary
   }
 };
 </script>

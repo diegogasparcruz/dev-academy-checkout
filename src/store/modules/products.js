@@ -53,7 +53,15 @@ const state = {
 
 }
 
-const getters = {}
+const getters = {
+
+  totalValue(state) {
+    return state.products.reduce((total, product) => {
+      return total + product.quantity * product.price
+    }, 0)
+  }
+
+}
 
 const actions = {}
 

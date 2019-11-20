@@ -13,7 +13,7 @@
     </div>
 
     <div class="sub-total">
-      <p>{{ product.price }}</p>
+      <p>{{ productTotalPrice | toMoney }}</p>
     </div>
   </div>
 </template>
@@ -27,6 +27,23 @@ export default {
   name: "HomeProductListItem",
   props: {
     product: Object
+  },
+  filters: {
+    toMoney(value) {
+      const formatter = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+      return formatter.format(value);
+    }
+  },
+  computed: {
+    productTotalPrice() {
+      return this.product.price * (this.product.quantity || 1);
+    }
   },
   methods: {
     ...mapMutations(["decreaseProductQuantity", "increaseProductQuantity"])
