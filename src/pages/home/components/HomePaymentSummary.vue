@@ -20,7 +20,13 @@
     </div>
     <div class="total-value">
       <p class="total">Valor total</p>
-      <p class="value">{{ totalValue }}</p>
+      <p class="value">{{ totalValue | toMoney }}</p>
+    </div>
+
+    <div class="button-container">
+      <router-link to="/checkout">
+        <button class="checkout-button">Checkout</button>
+      </router-link>
     </div>
   </div>
 </template>
