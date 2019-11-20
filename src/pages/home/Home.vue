@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Qualquer coisa</h1>
+    <h1></h1>
     <HomeProductList class="product-list" />
     <HomePaymentSummary class="payment-summary" />
   </div>

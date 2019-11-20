@@ -17,6 +17,7 @@ import { createNamespacedHelpers } from "vuex";
 import HomeProductListItem from "./HomeProductListItem";
 
 const { mapState } = createNamespacedHelpers("products");
+const { mapActions } = createNamespacedHelpers("products");
 
 export default {
   name: "HomeProductList",
@@ -25,6 +26,12 @@ export default {
   },
   computed: {
     ...mapState(["products"])
+  },
+  methods: {
+    ...mapActions(["fetchAllProducts"])
+  },
+  created() {
+    this.fetchAllProducts();
   }
 };
 </script>
